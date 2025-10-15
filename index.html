@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techne Nest - Diseño y Desarrollo Web de Vanguardia</title>
-    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+    
+    <title>Techne Nest | Diseño y Desarrollo Web, Portafolio - Buenos Aires</title>
+    
+    <meta name="description" content="Techne Nest: expertos en diseño y desarrollo web moderno. Mira nuestro portafolio de landing pages profesionales (CliBaires, ATClimatización, El Molino).">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -70,6 +73,19 @@
             padding-top: 2em;
             position: relative;
         }
+        
+        /* 3. Estilo para ocultar el H1 de texto pero mantenerlo accesible para SEO */
+        .seo-hidden-h1 {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        
         header .logo-img {
             /* URL del logo en GitHub */
             max-width: 150px; 
@@ -138,7 +154,7 @@
         .hero-content {
             z-index: 2;
         }
-        .hero h2 {
+        .hero h2 { /* Este H2 se mantiene como H2, pero su texto es el titular de la hero */
             font-size: 3.5em;
             margin-bottom: 0.2em;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -336,9 +352,13 @@
             <button onclick="changeLanguage('es')">ES</button>
             <button onclick="changeLanguage('en')">EN</button>
         </div>
-        <h1>
+        
+        <h1 class="seo-hidden-h1">Techne Nest - Diseño y Desarrollo Web profesional, Portafolio en Buenos Aires</h1>
+        
+        <div>
             <img src="https://raw.githubusercontent.com/juantome49/Techne-Nest/main/logo-Techne%20Nest.png" alt="Logo de Techne Nest" class="logo-img">
-        </h1>
+        </div>
+        
         <nav>
             <a href="#inicio" data-lang-key="nav-inicio">Inicio</a>
             <a href="#servicios" data-lang-key="nav-servicios">Servicios</a>
@@ -382,12 +402,12 @@
                     <img src="https://raw.githubusercontent.com/juantome49/Techne-Nest/main/Captura%20de%20pantalla%202025-10-13%20194955.png" alt="Página de inicio profesional para una empresa gastronómica.">
                     <div class="portfolio-overlay">
                         <h4 data-lang-key="portfolio-molino-title">El Molino</h4>
-                        <p data-lang-key="portfolio-molino-text">Página de inicio profesional para una empresa de alojamiento , turismo y gastronómia.</p>
+                        <p data-lang-key="portfolio-molino-text">Página de inicio profesional para una empresa gastronómica.</p>
                     </div>
                 </a>
 
                 <a href="https://juantome49.github.io/clibaires/" target="_blank" class="portfolio-item">
-                    <img src="https://raw.githubusercontent.com/juantome49/Techne-Nest/main/Captura%20de%20pantalla%202025-10-13%20195247.png" alt="Sitio web informativo para un servicio de limpieza profesional.">
+                    <img src="https://raw.githubusercontent.com/juantome49/Techne-Nest/main/Captura%20de%20pantalla%202025-10-13%20195247.png" alt="Página de servicios de instalación y mantenimiento de aires acondicionados.">
                     <div class="portfolio-overlay">
                         <h4 data-lang-key="portfolio-clibaires-title">CliBaires</h4>
                         <p data-lang-key="portfolio-clibaires-text">Página de servicios de instalación y mantenimiento de aires acondicionados.</p>
@@ -395,10 +415,10 @@
                 </a>
 
                 <a href="https://juantome49.github.io/atclimatizacion/" target="_blank" class="portfolio-item">
-                    <img src="https://raw.githubusercontent.com/juantome49/Techne-Nest/main/Captura%20de%20pantalla%202025-10-13%20195421.png" alt="Página de servicios de instalación y mantenimiento de aires acondicionados.">
+                    <img src="https://raw.githubusercontent.com/juantome49/Techne-Nest/main/Captura%20de%20pantalla%202025-10-13%20195421.png" alt="Sitio web informativo para un servicio de limpieza profesional.">
                     <div class="portfolio-overlay">
                         <h4 data-lang-key="portfolio-clima-title">ATClimatización</h4>
-                        <p data-lang-key="portfolio-clima-text">Página de servicios de instalación y mantenimiento de aires acondicionados.</p>
+                        <p data-lang-key="portfolio-clima-text">Sitio web informativo para un servicio de limpieza profesional.</p>
                     </div>
                 </a>
             </div>
@@ -427,9 +447,9 @@
         <p data-lang-key="footer-text">&copy; 2025 Techne Nest. Todos los derechos reservados. Diseñado por <span>Techne Nest</span>.</p>
     </footer>
 
-   <a href="https://ig.me/m/technenest?text=Hola,%20quisiera%20saber%20más%20sobre%20el%20diseño%20y%20desarrollo%20web" target="_blank" class="floating-instagram">
-    <i class="fab fa-instagram"></i>
-</a>
+    <a href="https://ig.me/m/technenest?text=Hola,%20quisiera%20saber%20más%20sobre%20el%20diseño%20y%20desarrollo%20web" target="_blank" class="floating-instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
 
     <script>
         const translations = {
@@ -451,10 +471,14 @@
                 "portfolio-subtitle": "Mira lo que hemos hecho para otros clientes.",
                 "portfolio-molino-title": "El Molino",
                 "portfolio-molino-text": "Página de inicio profesional para una empresa gastronómica.",
+                
+                // ********** CAMBIO AQUÍ **********
                 "portfolio-clibaires-title": "CliBaires",
-                "portfolio-clibaires-text": "Sitio web informativo para un servicio de limpieza profesional.",
+                "portfolio-clibaires-text": "Página de servicios de instalación y mantenimiento de aires acondicionados.", // Descripción de CliBaires actualizada.
                 "portfolio-clima-title": "ATClimatización",
-                "portfolio-clima-text": "Página de servicios de instalación y mantenimiento de aires acondicionados.",
+                "portfolio-clima-text": "Sitio web informativo para un servicio de limpieza profesional.", // Descripción de ATClimatización actualizada.
+                // **********************************
+
                 "contact-heading": "Hablemos de tu proyecto.",
                 "contact-subtitle": "Contáctanos para empezar a trabajar juntos.",
                 "form-name": "Nombre:",
@@ -481,10 +505,14 @@
                 "portfolio-subtitle": "Take a look at what we've done for other clients.",
                 "portfolio-molino-title": "El Molino",
                 "portfolio-molino-text": "Professional landing page for a gastronomy company.",
+                
+                // ********** CAMBIO AQUÍ **********
                 "portfolio-clibaires-title": "CliBaires",
-                "portfolio-clibaires-text": "Informative website for a professional cleaning service.",
+                "portfolio-clibaires-text": "Service page for installation and maintenance of air conditioners.", // Descripción de CliBaires actualizada.
                 "portfolio-clima-title": "ATClimatización",
-                "portfolio-clima-text": "Service page for installation and maintenance of air conditioners.",
+                "portfolio-clima-text": "Informative website for a professional cleaning service.", // Descripción de ATClimatización actualizada.
+                // **********************************
+
                 "contact-heading": "Let's talk about your project.",
                 "contact-subtitle": "Contact us to start working together.",
                 "form-name": "Name:",
